@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <MyNav />
       <UnderNav />
-      <MyForm movies={starWars} />
       <MyCarousel mySaga={starTrek} name="Star Trek" className="text-white" />
       <MyCarousel mySaga={marvelUniverse} name="Marvel Universe" />
       <MyCarousel mySaga={starWars} name="Star Wars" />
