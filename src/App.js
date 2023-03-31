@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import MyCarousel from './components/MyCarousel';
+import MyNav from './components/MyNav';
+import MyFooter from './components/MyFooter';
+import UnderNav from './components/UnderNav';
+import MyForm from './components/MyForm';
 
 function App() {
+  const starTrek = "star%20trek"
+  const marvelUniverse = "marvel"
+  const starWars = "star%20wars"
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyNav />
+      <UnderNav />
+      <MyForm movies={starWars} />
+      <MyCarousel mySaga={starTrek} name="Star Trek" className="text-white" />
+      <MyCarousel mySaga={marvelUniverse} name="Marvel Universe" />
+      <MyCarousel mySaga={starWars} name="Star Wars" />
+      <MyFooter />
     </div>
   );
 }
