@@ -60,13 +60,32 @@ function MovieDetails(props) {
   return (
     <Container>
       <Row>
-        <Col xs={12} md={8}>
-          <h2 className="text-light">{movie && movie.Title}</h2>
+        <Col xs={12} md={8} className="text-light text-center">
+          <h2>{movie && movie.Title}</h2>
           <img src={movie && movie.Poster} alt={movie && movie.Title} />
+          <p>
+            Source - {movie && movie.Ratings[1].Source} | Rate -{" "}
+            {movie && movie.Ratings[1].Value} || Source -
+            {movie && movie.Ratings[2].Source} | Rate -{" "}
+            {movie && movie.Ratings[2].Value}
+          </p>
+          <p>Plot - {movie && movie.Plot}</p>
+          <p>Genre - {movie && movie.Genre}</p>
+          <p>Actors - {movie && movie.Actors}</p>
+          <p>Director - {movie && movie.Director}</p>
+          <p>Released - {movie && movie.Released}</p>
+          <p>
+            Duration -{movie && movie.Runtime} | Type - {movie && movie.Type}{" "}
+          </p>
           <ListGroup>
-            {comments.map((c) => {
+            <h4>Comments</h4>
+
+            {comments.map((c, i) => {
               return (
-                <ListGroup.Item className="d-flex justify-content-between">
+                <ListGroup.Item
+                  className="d-flex justify-content-between"
+                  key={c.elementId + i}
+                >
                   {c.comment} | {c.rate}
                 </ListGroup.Item>
               );
